@@ -31,6 +31,7 @@ let s:selection = "#21242b"
 let s:comment = "#6b6b73"
 let s:accent = "#10a793"
 let s:orange = "#f29c16"
+let s:visual_bg = "#1fc4ae"  " Lighter version of blue for visual selection
 
 " Helper function
 function! s:hi(group, fg, bg, attr)
@@ -61,7 +62,8 @@ call s:hi("StatusLine", s:fg, s:selection, "")
 call s:hi("StatusLineNC", s:comment, s:selection, "")
 call s:hi("Search", s:bg, s:yellow, "")
 call s:hi("IncSearch", s:bg, s:yellow, "")
-call s:hi("Visual", "", s:selection, "")
+call s:hi("Visual", s:bg, s:visual_bg, "")           " Using lighter color
+call s:hi("VisualNOS", s:bg, s:visual_bg, "")       " Using lighter color
 call s:hi("Folded", s:comment, s:bg, "")
 call s:hi("FoldColumn", s:comment, s:bg, "")
 call s:hi("Pmenu", s:fg, s:selection, "")
